@@ -1,4 +1,9 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
-theme = "universal"
+baseURL = 'http://revindiecation.github.io/'
+languageCode = 'es-MX'
+title = 'RevINDIEcation'
+theme = 'universal'
+defaultContentLanguage = "es"
+publishDir = 'public'
+
+[params]
+brandName = "RevINDIEcation ™"
