@@ -6,3 +6,6 @@
 
 - id: Slogan
   translation: "Aullido efímero, huella eterna"
+
+- id: PaginaNoEncontrada
+  translation: "Parece que esa página fue erradicada de la existencia."

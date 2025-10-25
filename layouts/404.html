@@ -1,92 +1,139 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="{{ .Site.LanguageCode }}">
 <head>
   <meta charset="UTF-8">
   <title>{{ .Site.Title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    body{
-      background: radial-gradient(circle at 50% 0%, #000000 0%, #1d1d1d 80%);
-      color:#fff;
-      font-family:'Segoe UI',Arial,sans-serif;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      height:100vh;
-      margin:0;
-      text-align:center;
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* elimina scroll */
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    text-align: center;
+    background: radial-gradient(circle at 50% 0%, #000000 0%, #1d1d1d 80%);
+    color: #fff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+  }
+
+  .container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem; /* mayor espacio entre elementos */
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 10vw, 8rem);
+    letter-spacing: 2px;
+    margin: 0;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    line-height: 1.1;
+  }
+
+  h1 span {
+    color: #575757;
+  }
+
+  h1 em.tm {
+    font-size: 35%;
+    transform: translateY(25%);
+    font-style: normal;
+    margin-left: 0.2rem;
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 3vw, 3rem);
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin: 0;
+    line-height: 1.2;
+    font-style: bold;
+    position: relative;
+    top: -30px;
+    font-weight: bold;
+
+  }
+
+  p.slogan {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    margin: 0;
+    font-style: italic;
+    font-weight: bold;
+
+    max-width: 80%;
+  }
+
+  footer {
+    font-size: 0.85rem;
+    opacity: 0.5;
+    margin-top: auto;
+    padding-bottom: 1rem;
+  }
+
+    /* Ajustes para pantallas grandes */
+  @media (min-width: 1200px) {
+    .container {
+      gap: 4rem;
     }
-
-    .container{
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      gap:2rem;               /* controla el stack vertical */
+    h1 {
+      font-size: 8rem;
     }
-
-    footer{
-      position:absolute;
-      bottom:1rem;
-      font-size:.85rem;
-      opacity:.5;
+    h2 {
+      font-size: 3rem;
     }
-
-    h1{
-      font-size:clamp(4rem,8vw,10rem);
-      letter-spacing:3px;
-      opacity:0;
-      animation:fadeIn 2s ease-in forwards;
-      margin:0;
-      display:flex;
-      align-items:flex-start; /* para ™ en baseline superior */
-
+    p.slogan {
+      font-size: 1.5rem;
     }
+  }
 
-    h1 em.tm{
-      font-size:40%;          /* más pequeño */
-      opacity:.6;
-      transform:translateY(20%); /* como superíndice */
-      font-style:normal;
-    }
+  @media (max-width: 600px) {
 
-    h2{
-      font-size:clamp(2rem,5vw,3rem);
-      letter-spacing:3px;
-      opacity:0;
-      animation:fadeIn 2s ease-in forwards;
-      margin:0;
-    }
+  .container {
+    gap: 1.5rem;
+    padding: 1rem;
+  }
 
-    p.slogan{
-      font-size:clamp(1rem,1.5vw,2rem);
-      opacity:0;
-      animation:fadeIn 2s ease-in forwards;
-      margin:0;
-    }
+  h1 {
+    font-size: clamp(2rem, 9vw, 3.5rem);
+  }
 
-    @keyframes fadeIn{
-      from{opacity:0;transform:scale(.95);}
-      to{opacity:1;transform:scale(1);}
-    }
+  h2 {
+    font-size: clamp(1.2rem, 6vw, 2rem);
+    top: -10px;
+  }
 
-    
+  p.slogan {
+    font-size: clamp(0.8rem, 3.5vw, 1rem);
+    max-width: 90%;
+  }
 
-    
-  </style>
+  footer {
+    font-size: 0.7rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+</style>
+
 </head>
 <body>
   <div class="container">
-    <h1>
-      Rev<span style="color:#575757;">INDIE</span>cation
-      <em class="tm">™</em>
-    </h1>
-
-    <h2>{{ i18n "txt_ComingSoon" | markdownify }}</h2>
-    <br>
-    <p class="slogan"><b><i>{{ i18n "Slogan" }}</i></b></p>
+    <h2>{{ i18n "PaginaNoEncontrada" | markdownify }}</h2>
 
   </div>
 
