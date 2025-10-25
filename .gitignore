@@ -1,0 +1,15 @@
+# Hugo build
+/public/
+/resources/
+/hugo_stats.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# GitHub Pages build folder
+gh-pages/
