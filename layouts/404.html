@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ .Site.Title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body{
+      background: radial-gradient(circle at 50% 0%, #000000 0%, #1d1d1d 80%);
+      color:#fff;
+      font-family:'Segoe UI',Arial,sans-serif;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      margin:0;
+      text-align:center;
+    }
+
+    .container{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      gap:2rem;               /* controla el stack vertical */
+    }
+
+    footer{
+      position:absolute;
+      bottom:1rem;
+      font-size:.85rem;
+      opacity:.5;
+    }
+
+    h1{
+      font-size:clamp(4rem,8vw,10rem);
+      letter-spacing:3px;
+      opacity:0;
+      animation:fadeIn 2s ease-in forwards;
+      margin:0;
+      display:flex;
+      align-items:flex-start; /* para ™ en baseline superior */
+
+    }
+
+    h1 em.tm{
+      font-size:40%;          /* más pequeño */
+      opacity:.6;
+      transform:translateY(20%); /* como superíndice */
+      font-style:normal;
+    }
+
+    h2{
+      font-size:clamp(2rem,5vw,3rem);
+      letter-spacing:3px;
+      opacity:0;
+      animation:fadeIn 2s ease-in forwards;
+      margin:0;
+    }
+
+    p.slogan{
+      font-size:clamp(1rem,1.5vw,2rem);
+      opacity:0;
+      animation:fadeIn 2s ease-in forwards;
+      margin:0;
+    }
+
+    @keyframes fadeIn{
+      from{opacity:0;transform:scale(.95);}
+      to{opacity:1;transform:scale(1);}
+    }
+
+    
+
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>
+      Rev<span style="color:#575757;">INDIE</span>cation
+      <em class="tm">™</em>
+    </h1>
+
+    <h2>{{ i18n "txt_ComingSoon" | markdownify }}</h2>
+    <br>
+    <p class="slogan"><b><i>{{ i18n "Slogan" }}</i></b></p>
+
+  </div>
+
+  {{ partial "footer.html" . }}
+</body>
+</html>
